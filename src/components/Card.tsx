@@ -17,7 +17,9 @@ function Title({ children, className }: CardType) {
 }
 
 function SubTitle({ children, className }: CardType) {
-  return <p className={`${className} text-xs`}>{children}</p>;
+  return (
+    <p className={`${className} text-xs text-gray-400 mb-2`}>{children}</p>
+  );
 }
 
 Card.Body = Body;

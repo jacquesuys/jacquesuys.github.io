@@ -1,10 +1,14 @@
 import Card from "../components/Card";
 import Categories from "../components/Categories";
+import Tabs from "../components/Tabs";
 import AppLayout from "../layout/AppLayout";
 
 function Overview() {
   return (
     <AppLayout>
+      <AppLayout.TopBar />
+      <AppLayout.Greeting />
+      <Tabs />
       <div className="stack w-full py-3">
         <Card>
           <Card.Body className="p-5">
@@ -13,7 +17,7 @@ function Overview() {
               Here you can see your pending requests
             </Card.SubTitle>
             <div className="card-actions">
-              <span className="badge">1/4</span>
+              <span className="badge bg-primary text-white">1/4</span>
               <progress
                 className="progress w-full"
                 value="25"
@@ -30,9 +34,9 @@ function Overview() {
               Here you can see your pending requests
             </Card.SubTitle>
             <div className="card-actions">
-              <span className="badge">1/4</span>
+              <span className="badge badge-primary">1/4</span>
               <progress
-                className="progress w-full"
+                className="progress progress-primary w-full"
                 value="25"
                 max="100"
               ></progress>
@@ -42,6 +46,7 @@ function Overview() {
       </div>
 
       <Categories />
+      <AppLayout.BottomNav />
     </AppLayout>
   );
 }

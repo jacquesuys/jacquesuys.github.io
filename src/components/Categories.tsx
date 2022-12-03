@@ -1,4 +1,3 @@
-import Card from "./Card";
 import Tile from "./Tile";
 import { Link } from "@tanstack/react-router";
 
@@ -9,7 +8,7 @@ function Categories() {
       <div className="grid grid-cols-2 gap-4">
         <Link to="/requests">
           <div className="indicator w-full">
-            <span className="indicator-item badge badge-secondary"></span>
+            <span className="indicator-item badge badge-error"></span>
             <Tile />
           </div>
         </Link>

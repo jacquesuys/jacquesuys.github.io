@@ -9,7 +9,7 @@ function TopBar() {
         Home
       </Link>
       <div className="flex items-center">
-        <SearchIcon />
+        <SearchIcon className="mr-2 w-4" />
         <Avatar />
       </div>
     </div>
