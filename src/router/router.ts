@@ -1,19 +1,19 @@
 import { createReactRouter, createRouteConfig } from "@tanstack/react-router";
-import CompanyForm from "./pages/CompanyForm";
-import Login from "./pages/Login";
-import Overview from "./pages/Overview";
-import Requests from "./pages/Requests";
+import CompanyForm from "../pages/CompanyForm";
+import Login from "../pages/Login";
+import Overview from "../pages/Overview";
+import Requests from "../pages/Requests";
 
 const rootRoute = createRouteConfig();
 
 const indexRoute = rootRoute.createRoute({
   path: "/",
-  component: Overview,
+  component: Login,
 });
 
-const loginRoute = rootRoute.createRoute({
-  path: "/login",
-  component: Login,
+const overviewRoute = rootRoute.createRoute({
+  path: "/overview",
+  component: Overview,
 });
 
 const requestsRoute = rootRoute.createRoute({
@@ -28,7 +28,7 @@ const companyFormRoute = rootRoute.createRoute({
 
 const routeConfig = rootRoute.addChildren([
   indexRoute,
-  loginRoute,
+  overviewRoute,
   requestsRoute,
   companyFormRoute,
 ]);

@@ -2,7 +2,16 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        black: "#00000",
+      },
+      fontFamily: {
+        interBold: ["Inter-ExtraBold", "sans-serif"],
+        interMedium: ["Inter-Medium", "sans-serif"],
+        interRegular: ["Inter-Regular", "sans-serif"],
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

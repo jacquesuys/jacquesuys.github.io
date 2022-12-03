@@ -1,18 +1,14 @@
-import { Link, Outlet, RouterProvider } from "@tanstack/react-router";
-import router from "./router";
+import { Outlet, RouterProvider } from "@tanstack/react-router";
+import router from "./router/router";
+import Layout from "./layout/Layout";
 
 function App() {
   return (
     <>
       <RouterProvider router={router}>
-        <div>
-          <Link to="/">Overview</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/requests">Requests</Link>
-          <Link to="/form">Form</Link>
-        </div>
-        <hr />
-        <Outlet />
+        <Layout>
+          <Outlet />
+        </Layout>
       </RouterProvider>
     </>
   );

@@ -1,7 +1,11 @@
-import React from "react";
+import { LayoutType } from "../types";
 
-function Layout() {
-  return <div>Layout</div>;
+function Layout({ children }: LayoutType) {
+  return (
+    <div className="h-full bg-black text-white p-7 font-interRegular">
+      {children}
+    </div>
+  );
 }
 
 export default Layout;
