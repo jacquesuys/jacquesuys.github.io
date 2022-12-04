@@ -1,14 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#1E90FF",
+          secondary: "#7FFF62",
+          accent: "#BC62FF",
+          neutral: "#7F7F7F",
+          "base-100": "#333333",
+          info: "#3ABFF8",
+          success: "#22c55e",
+          warning: "#FFAB1E",
+          error: "#FF1E1E",
+        },
+      },
+    ],
+  },
   theme: {
     extend: {
-      colors: {
-        black: "#00000",
-        primary: "rgb(29, 144, 255)",
-        tertiary: "rgb(79, 79, 79)",
-        white: "#FFFFFF",
-      },
       fontFamily: {
         interBold: ["Inter-ExtraBold", "sans-serif"],
         interMedium: ["Inter-Medium", "sans-serif"],

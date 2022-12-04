@@ -1,6 +1,5 @@
-import { Link } from "@tanstack/react-location";
 import Avatar from "../components/Avatar";
-import Button from "../components/Button";
+import LinkButton from "../components/LinkButton";
 import HomeIcon from "../icons/HomeIcon";
 import AppLayout from "../layout/AppLayout";
 
@@ -8,11 +7,9 @@ function ThankYou() {
   return (
     <AppLayout>
       <div className="flex justify-between items-center pb-4">
-        <Link to="/overview">
-          <Button className="bg-primary rounded-xl px-4 py-0 btn-md">
-            <HomeIcon className="w-4" />
-          </Button>
-        </Link>
+        <LinkButton to="/overview" className="rounded-xl btn-md px-0 w-12">
+          <HomeIcon className="w-4" />
+        </LinkButton>
         <div className="font-semibold text-base text-white">BIPA Update</div>
         <Avatar />
       </div>
@@ -35,9 +32,9 @@ function ThankYou() {
           </p>
         </div>
 
-        <Link to="/overview">
-          <Button className="w-full bg-primary">Return to Home</Button>
-        </Link>
+        <LinkButton to="/overview" className="w-full btn-md">
+          Return to Home
+        </LinkButton>
       </div>
       <AppLayout.BottomNav />
     </AppLayout>

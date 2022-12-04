@@ -9,7 +9,7 @@ function Tile() {
     <Card>
       <Card.Body className="p-3">
         <div className="flex justify-between">
-          <Button className="bg-primary rounded-xl px-2 btn-sm py-0">
+          <Button className="btn btn-primary rounded-xl px-2 btn-sm py-0">
             <BellIcon className="w-4" />
           </Button>
           <div className="flex items-center flex-row-reverse">
@@ -33,11 +33,11 @@ function Tile() {
 
         <div className="flex items-center">
           <progress
-            className="progress w-3/4 mr-2"
+            className="progress progress-primary w-3/4 mr-2"
             value="25"
             max="100"
           ></progress>
-          <span className="badge bg-primary text-white">1/4</span>
+          <span className="badge badge-primary text-white">1/4</span>
         </div>
       </Card.Body>
     </Card>

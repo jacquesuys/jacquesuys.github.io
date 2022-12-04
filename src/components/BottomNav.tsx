@@ -15,7 +15,7 @@ function BottomNav() {
         </Button>
       </Link>
 
-      <Button className="bg-primary px-4">
+      <Button className="btn-primary btn px-4">
         <span className="font-regular text-2xl">+</span>
       </Button>
 

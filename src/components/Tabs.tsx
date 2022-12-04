@@ -1,20 +1,15 @@
-import { Link } from "@tanstack/react-location";
-import Button from "./Button";
+import Tab from "./Tab";
 
 function Tabs() {
   return (
     <div className="tabs font-bold py-3">
-      <Link to="/overview" className="tab px-0">
-        <Button className="w-full bg-primary btn-sm px-6 leading-3">
-          Overview
-        </Button>
-      </Link>
+      <Tab to="/overview" className="">
+        Overview
+      </Tab>
 
-      <Link to="/requests" className="tab">
-        <Button className="w-full btn-ghost btn-sm px-6 leading-3">
-          Requests
-        </Button>
-      </Link>
+      <Tab to="/requests" alert>
+        Requests
+      </Tab>
     </div>
   );
 }

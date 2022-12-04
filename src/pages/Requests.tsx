@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-location";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import Tabs from "../components/Tabs";
@@ -39,11 +39,9 @@ function Requests() {
   const [searchTerm, updateSearchTerm] = useState<string>("");
   const [list, updateList] = useState<CompanyType[]>(reqResults);
 
-  const filterList = (term: string): void => {
-    updateSearchTerm(term);
-
+  useMemo(() => {
     let result = reqResults.filter(
-      ({ name }) => !name.toLowerCase().indexOf(term.toLowerCase())
+      ({ name }) => !name.toLowerCase().indexOf(searchTerm.toLowerCase())
     );
 
     if (activeTab !== "All") {
@@ -53,12 +51,7 @@ function Requests() {
     }
 
     updateList(result);
-  };
-
-  const filterViaTab = (predicate: string) => {
-    updateActiveTab(predicate);
-    filterList(searchTerm);
-  };
+  }, [activeTab, searchTerm]);
 
   return (
     <AppLayout>
@@ -68,33 +61,35 @@ function Requests() {
       <div>
         <div className="flex items-center">
           <progress
-            className="progress w-full mr-2"
+            className="progress progress-primary w-full mr-2"
             value="25"
             max="100"
           ></progress>
-          <span className="badge bg-transparent text-white">1/4</span>
+          <span className="badge badge-ghost text-white">1/4</span>
         </div>
         <div className="py-4">
           <input
             type="text"
             placeholder="Search"
             className="input w-full text-sm font-light mb-3"
-            onChange={(ev) => filterList(ev.target.value)}
+            onChange={(ev) => updateSearchTerm(ev.target.value)}
           />
-          <div className="tabs pb-4">
+          <div className="pb-4">
             <Button
               className={`${
-                activeTab === "All" ? "bg-primary" : null
+                activeTab === "All" ? "btn-primary" : "btn-ghost text-base-100"
               } tab btn-sm px-6 mr-2`}
-              onClick={() => filterViaTab("All")}
+              onClick={() => updateActiveTab("All")}
             >
               All
             </Button>
             <Button
               className={`${
-                activeTab === "Pending" ? "bg-primary" : null
+                activeTab === "Pending"
+                  ? "btn-primary"
+                  : "btn-ghost text-base-100"
               } tab btn-sm`}
-              onClick={() => filterViaTab("Pending")}
+              onClick={() => updateActiveTab("Pending")}
             >
               Pending
             </Button>

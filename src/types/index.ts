@@ -1,3 +1,4 @@
+import { type } from "os";
 import { ReactNode } from "react";
 
 export type ButtonType = {
@@ -29,4 +30,25 @@ export type SVGType = {
 export type InputType = {
   placeholder?: string;
   type?: string;
+};
+
+export type UserType = {
+  id: number;
+  name: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+};
+
+export type LinkType = {
+  children: ReactNode;
+  className?: string;
+  to: string;
+};
+
+export type TabType = {
+  children: ReactNode;
+  className?: string;
+  to?: string;
+  alert?: boolean;
 };

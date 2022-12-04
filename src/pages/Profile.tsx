@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-location";
 import AppLayout from "../layout/AppLayout";
 import profile from "../img/profile.jpeg";
 import Button from "../components/Button";
@@ -17,14 +18,19 @@ function Profile() {
         <span className="underline text-xs text-gray-400 mb-3">
           tunabrock@gmail.com
         </span>
-        <Button className="btn-primary btn-sm px-6 mb-5">Edit Profile</Button>
+        <Button className="btn-primary btn btn-sm px-6 mb-5">
+          Edit Profile
+        </Button>
         <div className="w-full text-sm text-gray-600 mb-1">Notifications</div>
         <Card className="mb-4">
           <Card.Body className="p-4">
             <div className="flex justify-between items-center">
               <span className="font-medium">Turn on Notifications</span>
               <label className="label cursor-pointer">
-                <input type="checkbox" className="toggle toggle-sm" />
+                <input
+                  type="checkbox"
+                  className="toggle toggle-primary toggle-sm"
+                />
               </label>
             </div>
           </Card.Body>
@@ -34,11 +40,13 @@ function Profile() {
           <Card.Body className="p-4">
             <div className="flex justify-between items-center">
               <span className="font-medium">Invite people</span>
-              <Button className="btn-primary btn-sm px-6">Invite</Button>
+              <Button className="btn-primary btn btn-sm px-6">Invite</Button>
             </div>
           </Card.Body>
         </Card>
-        <span className="text-sm text-gray-600 mt-10">Log out</span>
+        <Link to="/" className="text-sm text-gray-600 mt-10">
+          Log out
+        </Link>
       </div>
       <AppLayout.BottomNav />
     </AppLayout>

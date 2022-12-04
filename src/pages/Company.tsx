@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-location";
 import Form from "../components/Form";
 import Text from "../components/Text";
 import Avatar from "../components/Avatar";
-import Button from "../components/Button";
+import LinkButton from "../components/LinkButton";
 import ChevronLeftIcon from "../icons/ChevronLeftIcon";
 import AppLayout from "../layout/AppLayout";
 
@@ -10,9 +10,9 @@ function Company() {
   return (
     <AppLayout>
       <div className="flex justify-between items-center pb-4">
-        <Button className="bg-primary btn-md rounded-2xl px-3 py-0">
+        <LinkButton to="/requests" className="rounded-xl btn-md px-0 w-12">
           <ChevronLeftIcon />
-        </Button>
+        </LinkButton>
         <Text.PageTitle>BIPA Update(1/2)</Text.PageTitle>
         <Avatar />
       </div>
@@ -42,9 +42,9 @@ function Company() {
         <Form.Label>ID/Passport</Form.Label>
         <Form.FileInput />
       </Form.Section>
-      <Link to="/company-last">
-        <Button className="w-full bg-primary">Confirm &amp; Proceed</Button>
-      </Link>
+      <LinkButton to="/company-last" className="w-full btn-md">
+        Confirm &amp; Proceed
+      </LinkButton>
       <AppLayout.BottomNav />
     </AppLayout>
   );

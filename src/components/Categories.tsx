@@ -13,7 +13,6 @@ function Categories() {
           </div>
         </Link>
         <Tile />
-
         <Tile />
         <Tile />
       </div>

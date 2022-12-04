@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "title": "Requests",
+      "new": 3,
+      "progress": true
+    }
+  ],
+  "requests": [
+    {
+      "name": "BIPA Company Update",
+      "status": "pending",
+      "id": "bipa-company-update"
+    },
+    {
+      "name": "Momentum Onboarding",
+      "status": "pending",
+      "id": "momentum-onboarding"
+    },
+    {
+      "name": "Hollard Claim",
+      "status": "pending",
+      "id": "hollard-claim"
+    },
+    {
+      "name": "Nedbank ODD",
+      "status": "",
+      "id": "nedbank-odd"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "Tuna Brock",
+      "firstName": "Tuna",
+      "lastName": "Brock",
+      "email": "tunabrock@gmail.com"
+    }
+  ]
+}

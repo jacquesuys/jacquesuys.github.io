@@ -25,7 +25,7 @@ function LockInput({ children }: LayoutType) {
       <Card.Body className="py-2 px-4">
         <div className="flex items-center justify-between">
           <span className="font-regular text-sm">{children}</span>
-          <Button className="btn-sm bg-primary px-2 rounded-xl -mr-1">
+          <Button className="btn-sm btn-primary btn px-2 rounded-xl -mr-1">
             <LockIcon className="w-4" />
           </Button>
         </div>

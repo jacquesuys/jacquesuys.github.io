@@ -18,7 +18,7 @@ function Login() {
           to="/overview"
           className="flex justify-center items-center w-full pb-5"
         >
-          <Button className="w-full bg-primary">Sign in with Email</Button>
+          <Button className="w-full btn-primary btn">Sign in with Email</Button>
         </Link>
         <div className="grid grid-cols-2 gap-3 w-full">
           <Button className="w-full btn-outline btn-tertiary">Google</Button>
