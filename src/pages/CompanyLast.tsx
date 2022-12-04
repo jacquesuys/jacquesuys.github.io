@@ -29,10 +29,10 @@ function CompanyLast() {
         <Form.Label>Company Name*</Form.Label>
         <Form.Input type="text" placeholder="Company Name" />
         <Form.Label>Company Type*</Form.Label>
-        <select className="select w-1/2 rounded-2xl mb-4 font-light">
-          <option disabled selected>
-            Select Company Type
-          </option>
+        <select
+          className="select w-1/2 rounded-2xl mb-4 font-light"
+          defaultValue="Select Company Type"
+        >
           <option>Type 1</option>
           <option>Type 2</option>
           <option>Type 3</option>

@@ -14,7 +14,10 @@ function Login() {
       </div>
 
       <div className="flex flex-col w-full items-center">
-        <Link to="/overview" className="w-full pb-5">
+        <Link
+          to="/overview"
+          className="flex justify-center items-center w-full pb-5"
+        >
           <Button className="w-full bg-primary">Sign in with Email</Button>
         </Link>
         <div className="grid grid-cols-2 gap-3 w-full">
@@ -24,7 +27,7 @@ function Login() {
       </div>
       <div className="flex flex-col items-center py-3">
         <small className="text-xs text-gray-400 py-1">
-          By Continuining you agree to the Terms and Condintions
+          By Continuing you agree to the Terms and Condintions
         </small>
         <img src={logo} alt="IDToday" className="w-40" />
       </div>
