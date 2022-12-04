@@ -1,5 +1,5 @@
 import Tile from "./Tile";
-import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-location";
 
 function Categories() {
   return (

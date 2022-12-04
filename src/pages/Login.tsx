@@ -1,7 +1,7 @@
+import { Link } from "@tanstack/react-location";
 import Button from "../components/Button";
 import logo from "../img/logo.png";
 import login from "../img/login.png";
-import { Link } from "@tanstack/react-router";
 
 function Login() {
   return (

@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-location";
 import Form from "../components/Form";
 import Text from "../components/Text";
 import Avatar from "../components/Avatar";

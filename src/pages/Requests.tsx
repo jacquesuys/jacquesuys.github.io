@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-location";
 import { useState } from "react";
 import Button from "../components/Button";
 import Card from "../components/Card";

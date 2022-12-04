@@ -1,15 +1,16 @@
-import { Outlet, RouterProvider } from "@tanstack/react-router";
-import router from "./router/router";
+import { routes, location } from "./router/router";
 import Layout from "./layout/Layout";
+
+import { Router, Outlet } from "@tanstack/react-location";
 
 function App() {
   return (
     <>
-      <RouterProvider router={router}>
+      <Router routes={routes} location={location}>
         <Layout>
           <Outlet />
         </Layout>
-      </RouterProvider>
+      </Router>
     </>
   );
 }

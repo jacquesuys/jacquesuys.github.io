@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-location";
 import ClipboardIcon from "../icons/ClipboardIcon";
 import HomeIcon from "../icons/HomeIcon";
 import Button from "./Button";

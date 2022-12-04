@@ -1,5 +1,4 @@
-import { Link } from "@tanstack/react-router";
-import React from "react";
+import { Link } from "@tanstack/react-location";
 import Avatar from "../components/Avatar";
 import Button from "../components/Button";
 import HomeIcon from "../icons/HomeIcon";

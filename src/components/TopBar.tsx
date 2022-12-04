@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-location";
 import SearchIcon from "../icons/SearchIcon";
 import Avatar from "./Avatar";
 
