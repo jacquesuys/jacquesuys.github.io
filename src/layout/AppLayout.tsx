@@ -7,7 +7,9 @@ function AppLayout({ children }: LayoutType) {
   return (
     <div>
       <div className="content">
-        <div className="overflow-y-auto scroll-smooth pb-20">{children}</div>
+        <div className="overflow-y-scroll scroll-smooth scrollbar-hide pb-20">
+          {children}
+        </div>
       </div>
     </div>
   );

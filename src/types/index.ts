@@ -14,6 +14,16 @@ export type CompanyType = {
   status: string;
   id: string;
   image?: string;
+  to?: string;
+};
+
+export type HistoryType = {
+  name: string;
+  status: string;
+  id: string;
+  image?: string;
+  to?: string;
+  activity: string | Date;
 };
 
 export type VaultType = {

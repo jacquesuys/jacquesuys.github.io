@@ -5,12 +5,12 @@ import LinkButton from "../components/LinkButton";
 import AppLayout from "../layout/AppLayout";
 import BackButton from "../components/BackButton";
 
-function Company() {
+function ProductsServicesSubPage() {
   return (
     <AppLayout>
       <div className="flex justify-between items-center pb-4">
         <BackButton to="/requests" />
-        <Text.PageTitle>BIPA Update(1/2)</Text.PageTitle>
+        <Text.PageTitle>FNB</Text.PageTitle>
         <Avatar />
       </div>
       <Text.PageHeading>Hello Tuna Brock</Text.PageHeading>
@@ -47,4 +47,4 @@ function Company() {
   );
 }
 
-export default Company;
+export default ProductsServicesSubPage;

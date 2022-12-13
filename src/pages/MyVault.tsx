@@ -9,6 +9,9 @@ import {
 } from "@heroicons/react/24/solid";
 import AppLayout from "../layout/AppLayout";
 import { VaultType } from "../types";
+import BackButton from "../components/BackButton";
+import Avatar from "../components/Avatar";
+import Text from "../components/Text";
 
 const reqResults = [
   {
@@ -59,7 +62,11 @@ function MyVault() {
 
   return (
     <AppLayout>
-      <AppLayout.TopBar />
+      <div className="flex justify-between items-center pb-4">
+        <BackButton to="/overview" />
+        <Text.PageTitle>My Vault</Text.PageTitle>
+        <Avatar />
+      </div>
 
       <div>
         <div className="py-4">
@@ -93,7 +100,7 @@ function MyVault() {
         <div>
           {list.length ? (
             list.map((item: VaultType) => (
-              <Link to={item.to} key={item.name}>
+              <Link to={`/my-vault/${item.to}`} key={item.name}>
                 <Card className={`mb-3 `}>
                   <Card.Body className="py-3 px-4">
                     <div className="flex justify-between items-center">
