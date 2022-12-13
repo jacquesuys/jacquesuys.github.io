@@ -1,6 +1,6 @@
 import Avatar from "../components/Avatar";
 import LinkButton from "../components/LinkButton";
-import HomeIcon from "../icons/HomeIcon";
+import { HomeIcon } from "@heroicons/react/24/solid";
 import AppLayout from "../layout/AppLayout";
 
 function ThankYou() {

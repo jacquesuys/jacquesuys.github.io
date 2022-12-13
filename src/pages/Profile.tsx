@@ -3,6 +3,10 @@ import AppLayout from "../layout/AppLayout";
 import profile from "../img/profile.jpeg";
 import Button from "../components/Button";
 import Card from "../components/Card";
+import {
+  ChevronRightIcon,
+  LockClosedIcon as LockIcon,
+} from "@heroicons/react/24/solid";
 
 function Profile() {
   return (
@@ -21,6 +25,28 @@ function Profile() {
         <Button className="btn-primary btn btn-sm px-6 mb-5">
           Edit Profile
         </Button>
+        <div className="w-full text-sm text-gray-600 mb-1">My Vault</div>
+
+        <Link to="/my-vault" className="w-full mb-4">
+          <Card>
+            <Card.Body className="p-4">
+              <div className="flex justify-between items-center">
+                <div className="font-medium flex justify-center items-center">
+                  <button className="btn-secondary btn btn-sm mr-2">
+                    <div className="w-4">
+                      <LockIcon className="fill-white" />
+                    </div>
+                  </button>
+                  <span>My Vault</span>
+                </div>
+                <div className="w-4">
+                  <ChevronRightIcon />
+                </div>
+              </div>
+            </Card.Body>
+          </Card>
+        </Link>
+
         <div className="w-full text-sm text-gray-600 mb-1">Notifications</div>
         <Card className="mb-4">
           <Card.Body className="p-4">
@@ -35,6 +61,7 @@ function Profile() {
             </div>
           </Card.Body>
         </Card>
+
         <div className="w-full text-sm text-gray-600 mb-1">Invite Link</div>
         <Card>
           <Card.Body className="p-4">

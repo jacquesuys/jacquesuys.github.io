@@ -1,4 +1,4 @@
-import LockIcon from "../icons/LockIcon";
+import { LockClosedIcon as LockIcon } from "@heroicons/react/24/solid";
 import { InputType, LayoutType } from "../types";
 import Button from "./Button";
 import Card from "./Card";

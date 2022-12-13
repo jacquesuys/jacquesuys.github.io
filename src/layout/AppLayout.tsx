@@ -5,11 +5,10 @@ import { LayoutType } from "../types";
 
 function AppLayout({ children }: LayoutType) {
   return (
-    <div
-      className="relative h-full"
-      style={{ minHeight: "calc(100vh - 180px)" }}
-    >
-      <div className="overflow-y-auto scroll-smooth pb-20">{children}</div>
+    <div>
+      <div className="content">
+        <div className="overflow-y-auto scroll-smooth pb-20">{children}</div>
+      </div>
     </div>
   );
 }

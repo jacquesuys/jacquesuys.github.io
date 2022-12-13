@@ -1,12 +1,11 @@
 import { Link } from "@tanstack/react-location";
-import ClipboardIcon from "../icons/ClipboardIcon";
-import HomeIcon from "../icons/HomeIcon";
+import { HomeIcon, ClipboardIcon } from "@heroicons/react/24/solid";
 import Button from "./Button";
 
 function BottomNav() {
   return (
     <div
-      className="h-20 py-4 flex justify-around fixed bottom-0 left-0 w-full"
+      className="h-20 py-4 flex justify-around fixed bottom-0 left-0 w-full md:hidden"
       style={{ background: "#000000" }}
     >
       <Link to="/overview">

@@ -9,11 +9,11 @@ function Login() {
       <div>
         <img src={login} alt="IDToday Login" className="w-full" />
         <h1 className="text-3xl font-bold leading-10 my-7">
-          The only identity platform you'll <br /> ever need
+          The only identity platform you'll ever need
         </h1>
       </div>
 
-      <div className="flex flex-col w-full items-center">
+      <div className="flex flex-col sm:w-full md:w-1/3 items-center">
         <Link
           to="/overview"
           className="flex justify-center items-center w-full pb-5"

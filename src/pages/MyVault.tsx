@@ -2,40 +2,46 @@ import { Link } from "@tanstack/react-location";
 import { useMemo, useState } from "react";
 import Button from "../components/Button";
 import Card from "../components/Card";
-import { ChevronRightIcon, CheckCircleIcon } from "@heroicons/react/24/solid";
+import {
+  ChevronRightIcon,
+  DocumentIcon,
+  InformationCircleIcon,
+} from "@heroicons/react/24/solid";
 import AppLayout from "../layout/AppLayout";
-import { CompanyType } from "../types";
-import Bipa from "../img/etc/bipa-bg.png";
-import Momentum from "../img/etc/momentum.jpg";
-import Hollard from "../img/etc/hollard.jpg";
-import Nedbank from "../img/etc/nedbank.png";
+import { VaultType } from "../types";
 
 const reqResults = [
   {
-    name: "BIPA Company Update",
-    status: "pending",
-    id: "bipa-company-update",
-    image: Bipa,
+    name: "My Info",
+    icon: "info",
+    status: "recent",
+    to: "/my-info",
   },
   {
-    name: "Momentum Onboarding",
-    status: "pending",
-    id: "momentum-onboarding",
-    image: Momentum,
+    name: "My Documents",
+    icon: "document",
+    status: "recent",
+    to: "/my-documents",
   },
-  {
-    name: "Hollard Claim",
-    status: "pending",
-    id: "hollard-claim",
-    image: Hollard,
-  },
-  { name: "Nedbank ODD", status: "", id: "nedbank-odd", image: Nedbank },
 ];
 
-function Requests() {
+type IconLookup = {
+  [key: string]: JSX.Element;
+};
+
+const vaultIcons = (icon: string): JSX.Element => {
+  const icons: IconLookup = {
+    document: <DocumentIcon />,
+    info: <InformationCircleIcon />,
+  };
+
+  return icons[icon];
+};
+
+function MyVault() {
   const [activeTab, updateActiveTab] = useState<string>("All");
   const [searchTerm, updateSearchTerm] = useState<string>("");
-  const [list, updateList] = useState<CompanyType[]>(reqResults);
+  const [list, updateList] = useState<VaultType[]>(reqResults);
 
   useMemo(() => {
     let result = reqResults.filter(
@@ -54,7 +60,6 @@ function Requests() {
   return (
     <AppLayout>
       <AppLayout.TopBar />
-      <AppLayout.Greeting />
 
       <div>
         <div className="py-4">
@@ -75,40 +80,32 @@ function Requests() {
             </Button>
             <Button
               className={`${
-                activeTab === "Pending"
+                activeTab === "Recent"
                   ? "btn-primary"
                   : "btn-ghost text-base-100"
               } tab btn-sm`}
-              onClick={() => updateActiveTab("Pending")}
+              onClick={() => updateActiveTab("Recent")}
             >
-              Pending
+              Recent
             </Button>
           </div>
         </div>
         <div>
           {list.length ? (
-            list.map((item: CompanyType) => (
-              <Link to="/company" key={item.name}>
-                <Card
-                  className={`mb-3 ${
-                    item.status && `border-solid border border-red-600`
-                  }`}
-                >
+            list.map((item: VaultType) => (
+              <Link to={item.to} key={item.name}>
+                <Card className={`mb-3 `}>
                   <Card.Body className="py-3 px-4">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center">
                         <div className="avatar">
-                          <div className="w-9 mr-3 rounded-full">
-                            <img src={item.image} alt={item.name} />
-                          </div>
+                          <button className="btn btn-secondary btn-sm mr-2 text-white px-2 text-center">
+                            <div className="w-4 ">{vaultIcons(item.icon)}</div>
+                          </button>
                         </div>
                         <div className=" font-medium">{item.name}</div>
                       </div>
-                      {item.status === "pending" ? (
-                        <ChevronRightIcon className="w-4" />
-                      ) : (
-                        <CheckCircleIcon className="fill-blue-500 w-6" />
-                      )}
+                      <ChevronRightIcon className="w-4" />
                     </div>
                   </Card.Body>
                 </Card>
@@ -126,4 +123,4 @@ function Requests() {
   );
 }
 
-export default Requests;
+export default MyVault;

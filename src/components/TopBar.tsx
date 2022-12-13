@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-location";
-import SearchIcon from "../icons/SearchIcon";
+import { MagnifyingGlassIcon as SearchIcon } from "@heroicons/react/24/solid";
 import Avatar from "./Avatar";
 
 function TopBar() {

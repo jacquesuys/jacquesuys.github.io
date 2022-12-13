@@ -1,18 +1,15 @@
-import { Link } from "@tanstack/react-location";
 import Form from "../components/Form";
 import Text from "../components/Text";
 import Avatar from "../components/Avatar";
 import LinkButton from "../components/LinkButton";
-import ChevronLeftIcon from "../icons/ChevronLeftIcon";
 import AppLayout from "../layout/AppLayout";
+import BackButton from "../components/BackButton";
 
 function CompanyLast() {
   return (
     <AppLayout>
       <div className="flex justify-between items-center pb-4">
-        <LinkButton to="/company" className="rounded-xl btn-md px-0 w-12">
-          <ChevronLeftIcon />
-        </LinkButton>
+        <BackButton to="/company" />
         <Text.PageTitle>BIPA Update(2/2)</Text.PageTitle>
         <Avatar />
       </div>

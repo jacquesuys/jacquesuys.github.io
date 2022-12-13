@@ -1,19 +1,12 @@
-import { type } from "os";
-import { ReactNode } from "react";
+import { ComponentPropsWithoutRef, ReactNode } from "react";
 
-export type ButtonType = {
-  children: ReactNode;
-  className?: string;
-  onClick?: () => void;
-};
+export interface ButtonType extends ComponentPropsWithoutRef<"button"> {}
+
+export interface LayoutType extends ComponentPropsWithoutRef<"div"> {}
 
 export type CardType = {
   children: ReactNode;
   className?: string;
-};
-
-export type LayoutType = {
-  children: ReactNode;
 };
 
 export type CompanyType = {
@@ -21,6 +14,13 @@ export type CompanyType = {
   status: string;
   id: string;
   image?: string;
+};
+
+export type VaultType = {
+  name: string;
+  status: string;
+  icon: string;
+  to: string;
 };
 
 export type SVGType = {
@@ -51,4 +51,9 @@ export type TabType = {
   className?: string;
   to?: string;
   alert?: boolean;
+};
+
+export type RouteType = {
+  path: string;
+  element: ReactNode;
 };

@@ -9,3 +9,13 @@ body {
 img, svg {
   width: 100%;
 }
+
+@layer components {
+  .content {
+    @apply relative h-full min-h-screen w-full md:p-7 bg-black lg:bg-content-bg;
+    
+    @media only screen and (max-width: 1024px) {
+      min-height: calc(100vh - 180px);
+    }
+  }
+}

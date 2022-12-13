@@ -20,6 +20,10 @@ module.exports = {
   },
   theme: {
     extend: {
+      colors: {
+        "content-bg": "#1a1a1a",
+        black: "#000000",
+      },
       fontFamily: {
         interBold: ["Inter-ExtraBold", "sans-serif"],
         interMedium: ["Inter-Medium", "sans-serif"],

@@ -9,7 +9,9 @@ function PageTitle({ children }: LayoutType) {
 }
 
 function PageHeading({ children }: LayoutType) {
-  return <div className="text-white font-bold text-2xl pb-2">{children}</div>;
+  return (
+    <div className="text-white font-semibold text-2xl pb-2">{children}</div>
+  );
 }
 
 function Paragraph({ children }: LayoutType) {
