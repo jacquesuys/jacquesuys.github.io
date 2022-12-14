@@ -3,6 +3,7 @@ import LinkButton from "../components/LinkButton";
 import AppLayout from "../layout/AppLayout";
 import BackButton from "../components/BackButton";
 import Form from "../components/Form";
+import Text from "../components/Text";
 
 function Documents() {
   return (
@@ -17,12 +18,12 @@ function Documents() {
         style={{ height: `calc(100vh - 200px)` }}
       >
         <div>
-          <h2 className="font-bold text-2xl my-7">Hello Tuna Brock.</h2>
-          <p className="text-xs leading-5">
+          <h2 className="font-bold text-2xl my-1">Hello Tuna Brock.</h2>
+          <Text.Paragraph>
             This is all your existing documents that is securely stored in your
             vault. Please review to confirm everything is still correct, and
             make changes where needed.
-          </p>
+          </Text.Paragraph>
         </div>
 
         <Form.Section>

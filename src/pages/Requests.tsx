@@ -67,7 +67,7 @@ function Requests() {
           <div className="pb-4">
             <Button
               className={`${
-                activeTab === "All" ? "btn-primary" : "btn-ghost text-base-100"
+                activeTab === "All" ? "btn-primary" : "btn-ghost text-base-300"
               } tab btn-sm px-6 mr-2`}
               onClick={() => updateActiveTab("All")}
             >
@@ -77,7 +77,7 @@ function Requests() {
               className={`${
                 activeTab === "Pending"
                   ? "btn-primary"
-                  : "btn-ghost text-base-100"
+                  : "btn-ghost text-base-300"
               } tab btn-sm`}
               onClick={() => updateActiveTab("Pending")}
             >

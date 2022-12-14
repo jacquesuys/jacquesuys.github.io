@@ -1,11 +1,14 @@
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
-import LinkButton from "./LinkButton";
+import { Link } from "@tanstack/react-location";
 
 function BackButton({ to }: { to: string }) {
   return (
-    <LinkButton to={to} className="rounded-xl btn-md px-0 w-12">
-      <ChevronLeftIcon className="w-4" />
-    </LinkButton>
+    <Link
+      to={to}
+      className="rounded-xl bg-primary text-white w-9 h-9 flex items-center justify-center"
+    >
+      <ChevronLeftIcon className="w-3 stroke-white stroke-2" />
+    </Link>
   );
 }
 

@@ -9,7 +9,7 @@ function Tab({ to, children, className, alert }: TabType) {
     <Link
       to={to}
       className={`tab rounded-full btn-sm px-6 leading-3 relative ${
-        active ? "bg-primary text-white" : "text-base-100"
+        active ? "bg-primary text-white" : "text-base-300"
       } ${className}`}
     >
       {children}

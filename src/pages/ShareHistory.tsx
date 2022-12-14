@@ -87,7 +87,7 @@ function ShareHistory() {
           <div className="pb-4">
             <Button
               className={`${
-                activeTab === "All" ? "btn-primary" : "btn-ghost text-base-100"
+                activeTab === "All" ? "btn-primary" : "btn-ghost text-base-300"
               } tab btn-sm px-6 mr-2`}
               onClick={() => updateActiveTab("All")}
             >
@@ -97,7 +97,7 @@ function ShareHistory() {
               className={`${
                 activeTab === "Recent"
                   ? "btn-primary"
-                  : "btn-ghost text-base-100"
+                  : "btn-ghost text-base-300"
               } tab btn-sm`}
               onClick={() => updateActiveTab("Recent")}
             >

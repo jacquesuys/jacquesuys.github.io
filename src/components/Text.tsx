@@ -15,7 +15,7 @@ function PageHeading({ children }: LayoutType) {
 }
 
 function Paragraph({ children }: LayoutType) {
-  return <p className="text-sm text-gray-300">{children}</p>;
+  return <p className="text-xs text-base-500 font-light">{children}</p>;
 }
 
 Text.PageTitle = PageTitle;

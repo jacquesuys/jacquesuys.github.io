@@ -21,8 +21,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        "base-500": "rgba(255, 255, 255, 0.5)",
+        "base-300": "rgba(255, 255, 255, 0.3)",
+        "base-200": "rgba(255, 255, 255, 0.2)",
         "content-bg": "#1a1a1a",
-        black: "#000000",
       },
       fontFamily: {
         interBold: ["Inter-ExtraBold", "sans-serif"],
