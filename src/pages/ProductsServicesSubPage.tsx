@@ -18,7 +18,6 @@ function ProductsServicesSubPage() {
   const navigate = useNavigate();
   const onSubmit = () => navigate({ to: "/products-services", replace: true });
   const { productService } = useContext(Context);
-  console.log(productService.product);
 
   return (
     <AppLayout>
