@@ -17,6 +17,16 @@ export type CompanyType = {
   to?: string;
 };
 
+export type ProductType = {
+  product: string;
+  name: string;
+  status: string;
+  id: string;
+  image?: string;
+  to?: string;
+  income: string;
+};
+
 export type HistoryType = {
   name: string;
   status: string;

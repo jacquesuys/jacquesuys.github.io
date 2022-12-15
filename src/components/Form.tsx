@@ -1,10 +1,17 @@
 import { LockClosedIcon as LockIcon } from "@heroicons/react/24/solid";
+import { ReactNode } from "react";
 import { InputType, LayoutType } from "../types";
 import Button from "./Button";
 import Card from "./Card";
 
-function Form() {
-  return <div>Form</div>;
+function Form({
+  children,
+  onSubmit,
+}: {
+  children: ReactNode;
+  onSubmit: () => void;
+}) {
+  return <form onSubmit={onSubmit}>{children}</form>;
 }
 
 function Heading({ children }: LayoutType) {
@@ -34,6 +41,20 @@ function LockInput({ children }: LayoutType) {
   );
 }
 
+function Submit({ title }: { title: string }) {
+  return (
+    <input
+      type="submit"
+      className="w-full py-2 px-4 h-12 text-sm mb-4 rounded-full text-white bg-primary font-semibold"
+      value={title}
+    />
+  );
+}
+
+function Error({ children }: LayoutType) {
+  return <div className="text-error text-sm font-light mb-4">{children}</div>;
+}
+
 function Input({ placeholder, type = "text" }: InputType) {
   return (
     <input
@@ -59,5 +80,7 @@ Form.Input = Input;
 Form.Heading = Heading;
 Form.Label = Label;
 Form.LockInput = LockInput;
+Form.Submit = Submit;
+Form.Erorr = Error;
 
 export default Form;

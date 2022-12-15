@@ -20,7 +20,7 @@ const categories = [
   },
   {
     name: "Share History",
-    icon: "shopping",
+    icon: "share",
     color: "accent",
     indicator: undefined,
     to: "/share-history",
@@ -40,7 +40,7 @@ function Categories() {
       <h2 className="text-xl font-bold py-3">Categories</h2>
       <div className="grid grid-cols-2 gap-4">
         {categories.map((item) => (
-          <Link to={item.to}>
+          <Link to={item.to} key={item.name}>
             <Tile indicator={item.indicator}>
               <Tile.TopRow>
                 <Button

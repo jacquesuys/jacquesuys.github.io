@@ -18,4 +18,8 @@ img, svg {
       min-height: calc(100vh - 180px);
     }
   }
+
+  .input-field {
+    @apply input w-1/2 text-sm rounded-2xl mb-4
+  }
 }

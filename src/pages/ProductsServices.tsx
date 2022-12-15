@@ -1,53 +1,64 @@
-import { Link } from "@tanstack/react-location";
-import { useMemo, useState } from "react";
+import { useNavigate } from "@tanstack/react-location";
+import { useContext, useMemo, useState } from "react";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import AppLayout from "../layout/AppLayout";
-import { CompanyType } from "../types";
-import Bipa from "../img/etc/bipa-bg.png";
-import Momentum from "../img/etc/momentum.jpg";
-import Hollard from "../img/etc/hollard.jpg";
-import Nedbank from "../img/etc/nedbank.png";
+import { ProductType } from "../types";
+import FNBCardGold from "../img/etc/fnb-card-gold.png";
+import FNBCardSilver from "../img/etc/fnb-card-silver.png";
+import FNBCardBlack from "../img/etc/fnb-card-black.png";
+import FNBCardPrivate from "../img/etc/fnb-card-private.png";
 import BackButton from "../components/BackButton";
 import Avatar from "../components/Avatar";
 import Text from "../components/Text";
+import Context from "../context";
 
 const reqResults = [
   {
-    name: "BIPA",
+    product: "FNB",
+    name: "Gold Lifestyle Account",
+    income: "N$ 300 000 - N$ 400 000",
     status: "new",
-    id: "bipa",
-    image: Bipa,
-    to: "/bipa",
+    id: "fnb-gold",
+    image: FNBCardGold,
+    to: "/gold-lifestyle-account",
   },
   {
-    name: "Momentum",
+    product: "FNB",
+    name: "Platinum Lifestyle Account",
+    income: "N$ 300 000 - N$ 400 000",
     status: "new",
-    id: "momentum",
-    image: Momentum,
-    to: "/momentum",
+    id: "fnb-platinum",
+    image: FNBCardSilver,
+    to: "/platimum-lifestyle-account",
   },
   {
-    name: "Hollard",
+    product: "FNB",
+    name: "Private Clients Lifestyle",
+    income: "N$ 300 000 - N$ 400 000",
     status: "new",
-    id: "hollard",
-    image: Hollard,
-    to: "/hollard",
+    id: "fnb-private-client",
+    image: FNBCardBlack,
+    to: "/private-clients-lifestyle",
   },
   {
-    name: "Nedbank",
+    product: "FNB",
+    name: "Private Wealth Lifestyle",
+    income: "N$ 300 000 - N$ 400 000",
     status: "",
-    id: "nedbank",
-    image: Nedbank,
-    to: "/nedbank",
+    id: "fnb-private-wealth",
+    image: FNBCardPrivate,
+    to: "/private-wealth-lifestyle",
   },
 ];
 
 function ProductsServices() {
   const [activeTab, updateActiveTab] = useState<string>("All");
   const [searchTerm, updateSearchTerm] = useState<string>("");
-  const [list, updateList] = useState<CompanyType[]>(reqResults);
+  const [list, updateList] = useState<ProductType[]>(reqResults);
+  const { setProductService } = useContext(Context);
+  const navigate = useNavigate();
 
   useMemo(() => {
     let result = reqResults.filter(
@@ -62,6 +73,11 @@ function ProductsServices() {
 
     updateList(result);
   }, [activeTab, searchTerm]);
+
+  const clickHandler = (item: ProductType) => {
+    setProductService(item);
+    navigate({ to: `/products-services/${item.to}` });
+  };
 
   return (
     <AppLayout>
@@ -100,24 +116,31 @@ function ProductsServices() {
         </div>
         <div>
           {list.length ? (
-            list.map((item: CompanyType) => (
-              <Link to={`${item.id}`} key={item.name}>
+            list.map((item: ProductType) => (
+              <div key={item.name} onClick={() => clickHandler(item)}>
                 <Card className="mb-3">
                   <Card.Body className="py-3 px-4">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center">
-                        <div className="avatar">
-                          <div className="w-9 mr-3 rounded-full">
+                        <div className="w-2/5 mr-3 relative">
+                          <div className="w-full rounded-md overflow-hidden">
                             <img src={item.image} alt={item.name} />
                           </div>
                         </div>
-                        <div className=" font-medium">{item.name}</div>
+
+                        <div className="text-xs font-medium min-h-16 flex flex-col justify-between">
+                          <div>{item.name}</div>
+                          <div>
+                            <div>Income per year</div>
+                            <span>{item.income}</span>
+                          </div>
+                        </div>
                       </div>
                       <ChevronRightIcon className="w-4" />
                     </div>
                   </Card.Body>
                 </Card>
-              </Link>
+              </div>
             ))
           ) : (
             <div className="text-center text-sm text-gray-500">
